@@ -10,7 +10,30 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
     return MaterialApp(
-        title: 'Pedra/nPapel/nTesoura', home: Container(color: Colors.white));
+        title: 'Pedra/nPapel/nTesoura',
+        home: Stack(
+          //  alignment: Alignment.center,
+          children: [
+            Container(
+              color: Colors.white,
+            ),
+            FractionallySizedBox(
+              heightFactor: 0.10,
+              widthFactor: 1,
+              child: Container(
+                color: Colors.black,
+                child: Text(
+                  textAlign: TextAlign.center,
+                  "Jokenpo",
+                  style: const TextStyle(
+                      backgroundColor: Color.fromARGB(0, 255, 255, 0),
+                      color: Colors.white,
+                      decoration: TextDecoration.none),
+                ),
+              ),
+            )
+          ],
+        ));
   }
 }
 
